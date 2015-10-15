@@ -6,7 +6,7 @@
   cursor: pointer;
   fill: #fff;
   fill-opacity: .5;
-  stroke: #990099;
+  stroke: #333;
   stroke-width: 1.5px;
 }
 
@@ -17,7 +17,7 @@
 
 path.link {
   fill: none;
-  stroke: #990099;
+  stroke: #333;
   stroke-width: 1.5px;
 }
 
@@ -26,9 +26,9 @@ path.link {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <script>
 
-var margin = {top: 30, right: 20, bottom: 30, left: 20},
+var margin = {top: 30, right: 20, bottom: 30, left: 30},
     width = 500 - margin.left - margin.right,
-    barHeight = 40,
+    barHeight = 50,
     barWidth = width * .8;
 
 var i = 0,
@@ -43,15 +43,18 @@ var diagonal = d3.svg.diagonal()
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
-  .append("g")
+    .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+
+
+
 root = {
-  "text": "flare",
+  "text": "chemical + disease relationship",
   "children": [{
     "id": "1",
     "text": "(chemical) relates to disease",
-    "desc": "data def that is really long TEST TEST The chemical has some type of relation to the disease.",
+    "desc": "data def that is really long TEST TEST, fix wrap! The chemical has some type of relation to the disease.",
     "children": [{
         "id": "1-2",
         "text": "exacerbates",
@@ -75,6 +78,18 @@ root = {
   }]
 }
 
+
+
+function moveChildren(node) {
+    if(node.children) {
+        node.children.forEach(function(c) { moveChildren(c); });
+        node._children = node.children;
+        node.children = null;
+    }
+}
+moveChildren(root);
+
+
 function update(source) {
 
   // Compute the flattened node list. TODO use d3.layout.hierarchy.
@@ -92,7 +107,7 @@ function update(source) {
 
   // Compute the "layout".
   nodes.forEach(function(n, i) {
-    n.x = i * (barHeight * 1.5);
+    n.x = i * (barHeight * 1.4);
   });
 
   // Update the nodes…
@@ -203,16 +218,8 @@ function click(d) {
 
 
 function color(d) {
-  return d._children ? "pink" : d.children ? "#D15FEE" : "#7F3CFF";
+  return d._children ? "#00FFFF" : d.children ? "#D15FEE" : "#7F3CFF";
 }
 
-function moveChildren(d) {
-    if(d.children) {
-        d.children.forEach(function(c) { moveChildren(c); });
-        d._children = node.children;
-        d.children = null;
-    }
-}
-moveChildren(root);
 
 </script>
