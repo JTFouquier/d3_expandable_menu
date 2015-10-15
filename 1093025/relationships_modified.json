@@ -1,0 +1,138 @@
+{
+  "chemical_disease_relation_menu": [{
+    "id": "1",
+    "text": "(chemical) relates to disease",
+
+    "children": [{
+        "id": "1-2",
+        "text": "exacerbates"
+      }, {
+        "id": "1-1",
+        "text": "treats",
+
+        "children": [{
+          "id": "1-1-1",
+          "text": "treats the symptoms of"
+          }, {
+          "id": "1-1-2",
+          "text": "treats the cause of"
+        }]
+
+      }]
+    }, {
+    "id": "2",
+    "text": "has no relation to"
+  }],
+
+  "gene_disease_relation_menu": [{
+    "id": "1",
+    "text": "(gene) relates to the disease",
+    "children": [{
+      "id": "1-1",
+      "text": "altered expression is associated with",
+      "children": [
+        {
+          "id": "1-1-1",
+          "text": "decreased expression leads to"
+        }, {
+          "id": "1-1-2",
+          "text": "increased expression leads to"
+        }]
+      }, {
+        "id": "1-2",
+        "text": "altered regulation leads to"
+      }, {
+      "id": "1-3",
+      "text": "mutation is associated with",
+      "children": [{
+          "id": "1-3-1",
+          "text": "deletion mutation is associated with"
+        }, {
+          "id": "1-3-2",
+          "text": "duplication mutation is associated with"
+        }, {
+          "id": "1-3-3",
+          "text": "insertion mutation is associated with"
+        }, {
+          "id": "1-3-4",
+          "text": "inversion mutation is associated with"
+        }, {
+          "id": "1-3-5",
+          "text": "substitution mutation is associated with"
+        }
+      ]}, {
+        "id": "1-4",
+        "text": "and post-translational modifications are associated with"
+    }]}, {
+    "id": "2",
+    "text": "has no relation to"
+  }],
+
+
+
+  "gene_chemical_relation_menu": [{
+    "id": "1",
+    "text": "(gene) relates to the chemical",
+
+    "children": [{
+      "id": "1-1",
+      "text": "amount is changed by",
+
+      "children": [{
+        "id": "1-1-1",
+        "text": "expression is decreased by"
+      }, {
+        "id": "1-1-2",
+        "text": "expression is increased by"
+      }]
+
+    }, {
+      "id": "1-2",
+      "text": "activity is changed by",
+
+      "children": [{
+        "id": "1-2-1",
+        "text": "activity is inhibited by"
+      }, {
+        "id": "1-2-2",
+        "text": "activity is activated by"
+      }]
+    }]
+
+    }, {
+    "id": "2",
+    "text": "has no relation to"
+    }
+  ],
+
+  "general_definitions_menu": [{
+    "id": "1",
+    "text": "gene expression",
+
+    "children": [{
+      "id": "1-1",
+      "text": "gene expression is the.. long description here...",
+      "info": [{
+        "short_desc": "short desc of gene expression",
+        "html": "html version",
+        "resource": "mygene.info"}],
+      "children": [{
+        "id": "1-1-1",
+        "text": "expression is decreased by"
+      }, {
+        "id": "1-1-2",
+        "text": "expression is increased by"
+      }]
+
+    },
+  ]
+
+    }, {
+    "id": "2",
+    "text": "has no relation to"
+    }
+  ]
+
+
+
+}

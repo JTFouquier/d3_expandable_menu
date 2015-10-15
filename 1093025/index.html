@@ -6,18 +6,18 @@
   cursor: pointer;
   fill: #fff;
   fill-opacity: .5;
-  stroke: #3182bd;
+  stroke: #990099;
   stroke-width: 1.5px;
 }
 
 .node text {
-  font: 10px sans-serif;
+  font: 12px sans-serif;
   pointer-events: none;
 }
 
 path.link {
   fill: none;
-  stroke: #9ecae1;
+  stroke: #990099;
   stroke-width: 1.5px;
 }
 
@@ -27,7 +27,7 @@ path.link {
 <script>
 
 var margin = {top: 30, right: 20, bottom: 30, left: 20},
-    width = 960 - margin.left - margin.right,
+    width = 500 - margin.left - margin.right,
     barHeight = 40,
     barWidth = width * .8;
 
@@ -51,10 +51,11 @@ root = {
   "children": [{
     "id": "1",
     "text": "(chemical) relates to disease",
-
+    "desc": "data def that is really long TEST TEST The chemical has some type of relation to the disease.",
     "children": [{
         "id": "1-2",
-        "text": "exacerbates"
+        "text": "exacerbates",
+        "desc": "description: to worsen"
       }, {
         "id": "1-1",
         "text": "treats",
@@ -101,7 +102,20 @@ function update(source) {
   var nodeEnter = node.enter().append("g")
       .attr("class", "node")
       .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-      .style("opacity", 1e-6);
+      .style("opacity", 1e-6)
+      .on("mouseover", function(d) {
+      var g = d3.select(this); // The node
+      // The class is used to remove the additional text later
+      var my_hover = g.append('text')
+         .classed('my_hover', true)
+         .attr('x', 20)
+         .attr('y', 15)
+         .text(d.desc);
+      })
+      .on("mouseout", function() {
+          //mouseout = remove the text you displayed
+          d3.select(this).select('text.my_hover').remove();
+      });
 
   // Enter any new nodes at the parent's previous position.
   nodeEnter.append("rect")
@@ -187,8 +201,18 @@ function click(d) {
   update(d);
 }
 
+
 function color(d) {
-  return d._children ? "pink" : d.children ? "steelblue" : "purple";
+  return d._children ? "pink" : d.children ? "#D15FEE" : "#7F3CFF";
 }
+
+function moveChildren(d) {
+    if(d.children) {
+        d.children.forEach(function(c) { moveChildren(c); });
+        d._children = node.children;
+        d.children = null;
+    }
+}
+moveChildren(root);
 
 </script>
