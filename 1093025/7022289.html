@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>7022289</title>
+<link rel="icon" href="/favicon.png">
+<style>
+
+@import url("/style.css?20120730");
+
+header,
+footer {
+  color: #555;
+}
+
+a.gist {
+  color: #000;
+}
+
+</style>
+
+<header>
+  <a href="/larskotthoff">larskotthoff</a>’s block
+  <a class="gist" title="View gist #7022289 on GitHub" href="https://gist.github.com/larskotthoff/7022289">#7022289</a>
+  <span class="date">October 17, 2013</span>
+</header>
+
+<h1>7022289</h1>
+
+
+<iframe src="/larskotthoff/raw/7022289/7fd7f8e6089c012b2e0d71a7f0544997fb962dd2/" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+<p><aside><a style="position:relative;top:6px;" href="/larskotthoff/raw/7022289/" target="_blank">Open in a new window.</a></aside>
+
+
+<div class="gist-readme"></div>
+
+<div class="gist-sources"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<script src="/highlight.min.js?20120730"></script>
+<script>
+
+var gist = {"history":[{"version":"7fd7f8e6089c012b2e0d71a7f0544997fb962dd2"}],"files":{"flare.json":{"language":"JSON","type":"application/json","filename":"flare.json","size":11413,"sha":"a05a94858375bd0ae023f6950a2b13fac5127637"},"index.html":{"language":"HTML","type":"text/html","filename":"index.html","size":4212,"sha":"1f7a08961eeb3ae59e43a3148d2b08a276bf8ebc"}},"created_at":"2013-10-17T10:01:57.000Z","updated_at":"2015-08-29T13:52:45.000Z","description":"","owner":{"login":"larskotthoff"},"id":"7022289"};
+
+var files = d3.values(gist.files)
+    .sort(function(a, b) { return (b.filename === "index.html") - (a.filename === "index.html") || a.filename.localeCompare(b.filename); });
+
+var readme = d3.selectAll(".gist-readme")
+    .data(files.filter(function(d) { return /^readme\b/i.test(d.filename) && d.language === "Markdown"; }))
+    .each(function(d) {
+      var readme = d3.select(this);
+      d3.text("/larskotthoff/raw/7022289/7fd7f8e6089c012b2e0d71a7f0544997fb962dd2/" + d.filename, function(error, content) {
+        readme.html(new Showdown.converter().makeHtml(content));
+        readme.selectAll("code").each(function() { hljs.highlightBlock(this); });
+      });
+    });
+
+var source = d3.select(".gist-sources").selectAll(".gist-source")
+    .data(files.filter(function(d) { return !/^readme\b/i.test(d.filename) && d.size < 50000 && text(d.type); }))
+  .enter().append("div")
+    .attr("class", "gist-source");
+
+source.append("h2")
+    .text(function(d) { return d.filename; })
+  .append("a")
+    .attr("name", function(d) { return d.filename; })
+    .attr("href", function(d) { return "#" + d.filename; })
+    .text("#");
+
+source.append("pre").append("code")
+    .attr("class", function(d) { return d.language && (d.language === "JSON" ? "javascript" : d.language.toLowerCase()); })
+    .each(function(d) {
+      var code = d3.select(this);
+      d3.text("/larskotthoff/raw/7022289/7fd7f8e6089c012b2e0d71a7f0544997fb962dd2/" + (d.filename === "index.html" ? "" : d.filename), function(error, content) {
+        code.text(content);
+        hljs.highlightBlock(code.node());
+      });
+    });
+
+function text(type) {
+  return /(^text\/)|(^application\/(javascript|json)$)|(^image\/svg$)|(\+xml$)/.test(type);
+}
+
+</script>
+
+<footer>
+  <a href="/larskotthoff">larskotthoff</a>’s block
+  <a class="gist" title="View gist #7022289 on GitHub" href="https://gist.github.com/larskotthoff/7022289">#7022289</a>
+  <span class="date">October 17, 2013</span>
+</footer>
+
+<script>
+
+GoogleAnalyticsObject = "ga", ga = function() { ga.q.push(arguments); }, ga.q = [], ga.l = +new Date;
+ga("create", "UA-48272912-1", "auto");
+ga("send", "pageview");
+
+</script>
+<script async src="//www.google-analytics.com/analytics.js"></script>
