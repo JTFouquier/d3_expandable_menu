@@ -2,26 +2,30 @@
   "chemical_disease_relation_menu": [{
     "id": "1",
     "text": "(chemical) relates to disease",
-
+    "desc": "The chemical has some type of relation to the disease.",
     "children": [{
         "id": "1-2",
-        "text": "exacerbates"
+        "text": "exacerbates",
+        "desc": "The chemical worsens or exacerbates the disease in any manner"
       }, {
         "id": "1-1",
         "text": "treats",
-
+        "desc": "The chemical improves or treats the disease in any manner",
         "children": [{
           "id": "1-1-1",
-          "text": "treats the symptoms of"
+          "text": "treats the symptoms of",
+          "desc": "The chemical treats the symptoms or signs of the disease in any manner. Symptoms are defined as subjective physical or mental manifestations of a disease; examples include stomachache, lower-back pain, and fatigue."
           }, {
           "id": "1-1-2",
-          "text": "treats the cause of"
+          "text": "treats the cause of",
+          "desc": "The chemical treats the cause of the disease in any manner"
         }]
 
       }]
     }, {
     "id": "2",
-    "text": "has no relation to"
+    "text": "has no relation to",
+    "desc": "The text does not specify a relationship between the chemical and disease."
   }],
 
   "gene_disease_relation_menu": [{
@@ -30,13 +34,16 @@
     "children": [{
       "id": "1-1",
       "text": "altered expression is associated with",
+      "desc": "Gene expression is the process by which information from a gene is used in the synthesis of a functional gene product. When gene expression is altered, gene expression is either increased or decreased.",
       "children": [
         {
           "id": "1-1-1",
-          "text": "decreased expression leads to"
+          "text": "decreased expression leads to",
+          "desc": "Gene product (RNA or protein) synthesis is slower than normal."
         }, {
           "id": "1-1-2",
-          "text": "increased expression leads to"
+          "text": "increased expression leads to",
+          "desc": "Gene product (RNA or protein) synthesis is faster than normal."
         }]
       }, {
         "id": "1-2",
