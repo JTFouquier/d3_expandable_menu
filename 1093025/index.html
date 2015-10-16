@@ -7,7 +7,7 @@
   fill: #fff;
   fill-opacity: 0.3;
   stroke: #333;
-  stroke-width: 1.5px;
+  stroke-width: 2px;
 }
 
 .node text {
@@ -18,21 +18,24 @@
 path.link {
   fill: none;
   stroke: #333;
-  stroke-width: 1.5px;
+  stroke-width: 2px;
 }
 
 </style>
 <body>
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <script>
 
 var margin = {top: 50, right: 20, bottom: 20, left: 20},
     width = 960 - margin.left - margin.right,
-    barHeight = 80,
-    barWidth = width * .9;
+    barHeight = 60,
+    barWidth = width * .7;
 
 var i = 0,
-    duration = 400,
+    duration = 550,
     root;
 
 var tree = d3.layout.tree()
@@ -48,48 +51,64 @@ var svg = d3.select("body").append("svg")
 
 
 root = {
+  "id": "1-1-1-1-1-1",
   "text": "chemical + disease relationship",
+  "desc": "",
   "children": [{
     "id": "1",
-    "id": "1",
-    "text": "(chemical) relates to disease",
-    "desc": "The chemical has some type of relation to the disease.",
+    "text": "(gene) relates to the disease",
     "children": [{
-        "id": "1-2",
-        "text": "exacerbates",
-        "desc": "The chemical worsens or exacerbates the disease in any manner"
-      }, {
-        "id": "1-1",
-        "text": "treats",
-        "desc": "The chemical improves or treats the disease in any manner",
-        "children": [{
+      "id": "1-1",
+      "text": "altered expression is associated with",
+      "desc": "gene expression is the process by which information from a gene is used in the synthesis of a functional gene product. When gene expression is altered, gene expression is either increased or decreased.",
+      "children": [
+        {
           "id": "1-1-1",
-          "text": "treats the symptoms of",
-          "desc": "The chemical treats the symptoms or signs of the disease in any manner. Symptoms are defined as subjective physical or mental manifestations of a disease; examples include stomachache, lower-back pain, and fatigue."
-          }, {
+          "text": "decreased expression leads to",
+          "desc": "gene products (mRNA, protein, or microRNAs) are produced slower than normal."
+        }, {
           "id": "1-1-2",
-          "text": "treats the cause of",
-          "desc": "The chemical treats the cause of the disease in any manner"
+          "text": "increased expression leads to",
+          "desc": "Gene products (mRNA, protein, or microRNAs) are produced faster than normal."
         }]
-
-      }]
-    }, {
+      }, {
+        "id": "1-2",
+        "text": "altered regulation leads to",
+        "desc": ""
+      }, {
+      "id": "1-3",
+      "text": "mutation is associated with",
+      "desc": "Gene mutations or aberrations are permanent alterations in the DNA sequence that makes up a gene, differing from the sequence found in most people. Mutations range in size; they can affect anywhere from a single DNA base pair to a large piece of a chromosome that includes multiple genes.",
+      "children": [{
+          "id": "1-3-1",
+          "text": "deletion mutation is associated with",
+          "desc": "A mutation in which a part of a chromosome or a sequence of DNA is lost is considered a deletion mutation. Deletion mutations are sometimes known as deficiencies, gene deletions, or simply 'deletions.'",
+        }, {
+          "id": "1-3-2",
+          "text": "duplication mutation is associated with",
+          "desc": "When any region of DNA is generated (duplicated) or abnormally copied during molecular evolution from within a gene region.",
+        }, {
+          "id": "1-3-3",
+          "text": "insertion mutation is associated with",
+          "desc": "An insertion changes the number of DNA bases in a gene by adding a piece of DNA."
+        }, {
+          "id": "1-3-4",
+          "text": "inversion mutation is associated with",
+          "desc": "A chromosome segment is 'clipped' out, turned upside down, and reinserted back into the chromosome.",
+        }, {
+          "id": "1-3-5",
+          "text": "substitution mutation is associated with",
+          "desc": "When one base pair is replaced by a different base pair."
+        }
+      ]}, {
+        "id": "1-4",
+        "text": "and post-translational modifications are associated with",
+        "desc": "translation is protein synthesis. When changes are made to a protein during or after translation, it is considered a post-translational modification."
+    }]}, {
     "id": "2",
     "text": "has no relation to",
-    "desc": "The text does not specify a relationship between the chemical and disease."
-  }]
+    "desc": "the gene does not relate to the disease."  }]
 }
-
-
-
-function moveChildren(node) {
-    if(node.children) {
-        node.children.forEach(function(c) { moveChildren(c); });
-        node._children = node.children;
-        node.children = null;
-    }
-}
-moveChildren(root);
 
 
 function update(source) {
@@ -157,7 +176,7 @@ function update(source) {
       .duration(duration)
       .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
       .style("opacity", 1)
-    .select("rect")
+      .select("rect")
       .style("fill", color);
 
   // Transition exiting nodes to the parent's new position.
@@ -220,8 +239,22 @@ function click(d) {
 
 
 function color(d) {
-  return d._children ? "#00FFFF" : d.children ? "#D15FEE" : "#7F3CFF";
-}
+  var my_string = d.id;
+  my_string_length = my_string.length;
+  console.log(my_string.length);
+  if (my_string.length === 1) {
+    console.log("yay");
+    return d ? "purple" : "purple";
+  } else if (my_string.length === 2) {
+      console.log("yay2");
+      return d ? "orange" : "orange";
+  } else if (my_string.length === 3) {
+      console.log("yay2");
+      return d ? "orange" : "orange";
+  } else {
+    return d ? "blue" : "blue";
+  }
+};
 
 
 </script>
