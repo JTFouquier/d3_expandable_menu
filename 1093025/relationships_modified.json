@@ -6,19 +6,19 @@
     "children": [{
         "id": "1-2",
         "text": "exacerbates",
-        "desc": "The chemical worsens or exacerbates the disease in any manner"
+        "desc": "The chemical worsens or exacerbates the disease in any manner."
       }, {
         "id": "1-1",
         "text": "treats",
-        "desc": "The chemical improves or treats the disease in any manner",
+        "desc": "The chemical improves or treats the disease in any manner.",
         "children": [{
           "id": "1-1-1",
           "text": "treats the symptoms of",
-          "desc": "The chemical treats the symptoms or signs of the disease in any manner. Symptoms are defined as subjective physical or mental manifestations of a disease; examples include stomachache, lower-back pain, and fatigue."
+          "desc": "Symptoms are defined as subjective physical or mental manifestations of a disease; examples include stomachache, lower-back pain, and fatigue. Signs are defined as objective manifestations of a disease; examples include high white blood cell count or bloody stool."
           }, {
           "id": "1-1-2",
           "text": "treats the cause of",
-          "desc": "The chemical treats the cause of the disease in any manner"
+          "desc": "Causes of disease include infectious, non-communicable/non-transferable, or lifestyle causes."
         }]
 
       }]
@@ -34,47 +34,55 @@
     "children": [{
       "id": "1-1",
       "text": "altered expression is associated with",
-      "desc": "Gene expression is the process by which information from a gene is used in the synthesis of a functional gene product. When gene expression is altered, gene expression is either increased or decreased.",
+      "desc": "gene expression is the process by which information from a gene is used in the synthesis of a functional gene product. When gene expression is altered, gene expression is either increased or decreased.",
       "children": [
         {
           "id": "1-1-1",
           "text": "decreased expression leads to",
-          "desc": "Gene product (RNA or protein) synthesis is slower than normal."
+          "desc": "gene products (mRNA, protein, or microRNAs) are produced slower than normal."
         }, {
           "id": "1-1-2",
           "text": "increased expression leads to",
-          "desc": "Gene product (RNA or protein) synthesis is faster than normal."
+          "desc": "Gene products (mRNA, protein, or microRNAs) are produced faster than normal."
         }]
       }, {
         "id": "1-2",
-        "text": "altered regulation leads to"
+        "text": "altered regulation leads to",
+        "desc": ""
       }, {
       "id": "1-3",
       "text": "mutation is associated with",
+      "desc": "Gene mutations or aberrations are permanent alterations in the DNA sequence that makes up a gene, differing from the sequence found in most people. Mutations range in size; they can affect anywhere from a single DNA base pair to a large piece of a chromosome that includes multiple genes.",
       "children": [{
           "id": "1-3-1",
-          "text": "deletion mutation is associated with"
+          "text": "deletion mutation is associated with",
+          "desc": "A mutation in which a part of a chromosome or a sequence of DNA is lost is considered a deletion mutation. Deletion mutations are sometimes known as deficiencies, gene deletions, or simply 'deletions.'",
         }, {
           "id": "1-3-2",
-          "text": "duplication mutation is associated with"
+          "text": "duplication mutation is associated with",
+          "desc": "When any region of DNA is generated (duplicated) or abnormally copied during molecular evolution from within a gene region.",
         }, {
           "id": "1-3-3",
-          "text": "insertion mutation is associated with"
+          "text": "insertion mutation is associated with",
+          "desc": "An insertion changes the number of DNA bases in a gene by adding a piece of DNA."
         }, {
           "id": "1-3-4",
-          "text": "inversion mutation is associated with"
+          "text": "inversion mutation is associated with",
+          "desc": "A chromosome segment is 'clipped' out, turned upside down, and reinserted back into the chromosome.",
         }, {
           "id": "1-3-5",
-          "text": "substitution mutation is associated with"
+          "text": "substitution mutation is associated with",
+          "desc": "When one base pair is replaced by a different base pair."
         }
       ]}, {
         "id": "1-4",
-        "text": "and post-translational modifications are associated with"
+        "text": "and post-translational modifications are associated with",
+        "desc": "translation is protein synthesis. When changes are made to a protein during or after translation, it is considered a post-translational modification."
     }]}, {
     "id": "2",
-    "text": "has no relation to"
+    "text": "has no relation to",
+    "desc": "the gene does not relate to the disease."
   }],
-
 
 
   "gene_chemical_relation_menu": [{
@@ -112,34 +120,74 @@
     }
   ],
 
-  "general_definitions_menu": [{
+  "chemical_disease_general_definitions": [{
     "id": "1",
-    "text": "gene expression",
-
-    "children": [{
-      "id": "1-1",
-      "text": "gene expression is the.. long description here...",
-      "info": [{
-        "short_desc": "short desc of gene expression",
-        "html": "html version",
-        "resource": "mygene.info"}],
-      "children": [{
-        "id": "1-1-1",
-        "text": "expression is decreased by"
-      }, {
-        "id": "1-1-2",
-        "text": "expression is increased by"
-      }]
-
-    },
-  ]
-
+    "text": "chemicals",
+    "desc": "a substance with a distinct molecular composition, including, but not limited to, brand name, generic or illegal drugs, chemical elements (Eg-oxygen), molecules."
     }, {
     "id": "2",
-    "text": "has no relation to"
+    "text": "signs of disease",
+    "desc": "signs are defined as objective manifestations of a disease; examples include high white blood cell count or blood in the stool."
+    }, {
+    "id": "3",
+    "text": "symptoms of disease",
+    "desc": "symptoms are defined as subjective physical or mental manifestations of a disease; examples include stomachache, back pain, headache, and fatigue."
+    }
+
+  ],
+
+  "gene_disease_general_definitions": [{
+    "id": "1",
+    "text": "gene",
+    "desc": "A molecular unit of heredity in an organism, and is usually referred to in biomedical literature by their gene name, gene symbol, or both."
+    }, {
+    "id": "2",
+    "text": "gene products",
+    "desc": "usually a protein, mRNA or microRNA that is encoded by the gene and will sometimes have the same name/symbol as the gene."
+    }, {
+    "id": "3",
+    "text": "disease",
+    "desc": "a particular abnormal, pathological condition that affects part or all of an organism."
+    }, {
+    "id": "4",
+    "text": "disease class",
+    "desc": "a specific category of similar but different diseases."
+    },{
+    "id": "1",
+    "text": "xxx",
+    "desc": "xxxxx"
+    }, {
+    "id": "2",
+    "text": "xxx",
+    "desc": "xxx"
+    },{
+    "id": "1",
+    "text": "xxx",
+    "desc": "xxxxx"
+    }, {
+    "id": "2",
+    "text": "xxx",
+    "desc": "xxx"
+    }
+
+  ],
+
+
+
+
+
+
+
+  "gene_chemical_general_definitions": [{
+    "id": "1",
+    "text": "xxx",
+    "desc": "xxxxx"
+    }, {
+    "id": "2",
+    "text": "xxx",
+    "desc": "xxx"
     }
   ]
-
 
 
 }

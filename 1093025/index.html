@@ -11,28 +11,26 @@
 }
 
 .node text {
-  font: 20px sans-serif;
+  font: 22px sans-serif;
   pointer-events: none;
 }
 
 path.link {
   fill: none;
-  stroke: #333;
+  /*stroke: #333;*/
   stroke-width: 2px;
 }
 
 </style>
 <body>
 
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <script>
 
 var margin = {top: 50, right: 20, bottom: 20, left: 20},
-    width = 960 - margin.left - margin.right,
+    width = 1400 - margin.left - margin.right,
     barHeight = 60,
-    barWidth = width * .7;
+    barWidth = width * .4;
 
 var i = 0,
     duration = 550,
@@ -52,7 +50,7 @@ var svg = d3.select("body").append("svg")
 
 root = {
   "id": "1-1-1-1-1-1",
-  "text": "chemical + disease relationship",
+  "text": "gene + disease relationship",
   "desc": "",
   "children": [{
     "id": "1",
@@ -120,7 +118,7 @@ function update(source) {
 
   d3.select("svg").transition()
       .duration(duration)
-      .attr("height", height);
+      .attr("height", height * 1.5);
 
   d3.select(self.frameElement).transition()
       .duration(duration)
@@ -128,7 +126,7 @@ function update(source) {
 
   // Compute the "layout".
   nodes.forEach(function(n, i) {
-    n.x = i * (barHeight);
+    n.x = i * (barHeight * 1.3);
   });
 
   // Update the nodes…
@@ -156,14 +154,15 @@ function update(source) {
   // Enter any new nodes at the parent's previous position.
   nodeEnter.append("rect")
       .attr("y", -barHeight / 2)
+      .attr("x", indent_of)
       .attr("height", barHeight)
       .attr("width", barWidth)
       .style("fill", color)
       .on("click", click);
 
   nodeEnter.append("text")
-      .attr("dy", -8)
-      .attr("dx", 5.5)
+      .attr("dy", -3)
+      .attr("dx", indent_of )
       .text(function(d) { return d.text; });
 
   // Transition nodes to their new position.
@@ -237,22 +236,36 @@ function click(d) {
   update(d);
 }
 
+function indent_of(d) {
+  var my_string = d.id;
+  console.log(my_string);
+  if (my_string.length === 1) {
+    indent = 100;
+    return indent;
+  } else if (my_string.length === 3) {
+    indent = 200;
+    return indent;
+  } else if (my_string.length === 5) {
+    indent = 400;
+    return indent;
+  } else {
+    indent = 0;
+    return indent;
+}
+};
+
 
 function color(d) {
   var my_string = d.id;
-  my_string_length = my_string.length;
   console.log(my_string.length);
   if (my_string.length === 1) {
-    console.log("yay");
     return d ? "purple" : "purple";
-  } else if (my_string.length === 2) {
-      console.log("yay2");
-      return d ? "orange" : "orange";
   } else if (my_string.length === 3) {
-      console.log("yay2");
+      return d ? "blue" : "blue";
+  } else if (my_string.length === 5) {
       return d ? "orange" : "orange";
   } else {
-    return d ? "blue" : "blue";
+    return d ? "black" : "black";
   }
 };
 
