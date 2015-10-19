@@ -21,16 +21,29 @@
           "desc": "Causes of disease include infectious, non-communicable/non-transferable, or lifestyle causes."
         }]
 
+      }, {
+        "id": "1-3",
+        "text": "increases risk of disease",
+        "desc": "Administration of the drug increases chances of getting the disease. Also considered 'adverse effects'."
+      }, {
+        "id": "1-4",
+        "text": "may cause",
+        "desc": ""
+      }, {
+        "id": "1-5",
+        "text": "prevents",
+        "desc": ""
       }]
     }, {
     "id": "2",
     "text": "has no relation to",
-    "desc": "The text does not specify a relationship between the chemical and disease."
+    "desc": "There is no relationship between the chemical and disease."
   }],
 
   "gene_disease_relation_menu": [{
     "id": "1",
     "text": "(gene) relates to the disease",
+    "desc": "the gene is related to the disease in some manner.",
     "children": [{
       "id": "1-1",
       "text": "altered expression is associated with",
@@ -39,20 +52,20 @@
         {
           "id": "1-1-1",
           "text": "decreased expression leads to",
-          "desc": "gene products (mRNA, protein, or microRNAs) are produced slower than normal."
+          "desc": "less gene product (mRNA, protein, or microRNAs) is produced than normal."
         }, {
           "id": "1-1-2",
           "text": "increased expression leads to",
-          "desc": "Gene products (mRNA, protein, or microRNAs) are produced faster than normal."
+          "desc": "more gene product (mRNA, protein, or microRNAs) is produced than normal."
         }]
       }, {
         "id": "1-2",
-        "text": "altered regulation leads to",
-        "desc": ""
+        "text": "altered regulation is associated with",
+        "desc": "gene regulation is the process of turning genes on or off."
       }, {
       "id": "1-3",
       "text": "mutation is associated with",
-      "desc": "Gene mutations or aberrations are permanent alterations in the DNA sequence that makes up a gene, differing from the sequence found in most people. Mutations range in size; they can affect anywhere from a single DNA base pair to a large piece of a chromosome that includes multiple genes.",
+      "desc": "Gene mutations or aberrations are permanent changes in the gene DNA sequence, differing from the sequence found in most people. Mutations range in size; they can affect anywhere from a single DNA base pair to a large piece of a chromosome that includes multiple genes.",
       "children": [{
           "id": "1-3-1",
           "text": "deletion mutation is associated with",
@@ -60,28 +73,28 @@
         }, {
           "id": "1-3-2",
           "text": "duplication mutation is associated with",
-          "desc": "When any region of DNA is generated (duplicated) or abnormally copied during molecular evolution from within a gene region.",
+          "desc": "A duplication mutation is when any region of DNA is generated/duplicated or abnormally copied during molecular evolution from within a gene region.",
         }, {
           "id": "1-3-3",
           "text": "insertion mutation is associated with",
-          "desc": "An insertion changes the number of DNA bases in a gene by adding a piece of DNA."
+          "desc": "An insertion mutation changes the number of DNA bases in a gene by adding a piece of DNA."
         }, {
           "id": "1-3-4",
           "text": "inversion mutation is associated with",
-          "desc": "A chromosome segment is 'clipped' out, turned upside down, and reinserted back into the chromosome.",
+          "desc": "When a chromosome segment is 'clipped' out, turned upside down, and reinserted back into the chromosome, it is considered an inversion mutation.",
         }, {
           "id": "1-3-5",
           "text": "substitution mutation is associated with",
-          "desc": "When one base pair is replaced by a different base pair."
+          "desc": "When one base pair is replaced by a different base pair it is considered a substitution mutation."
         }
       ]}, {
         "id": "1-4",
         "text": "and post-translational modifications are associated with",
-        "desc": "translation is protein synthesis. When changes are made to a protein during or after translation, it is considered a post-translational modification."
+        "desc": "Translation is protein synthesis. When changes are made to a protein during or after translation, it is considered a post-translational modification."
     }]}, {
     "id": "2",
     "text": "has no relation to",
-    "desc": "the gene does not relate to the disease."
+    "desc": "The gene does not relate to the disease."
   }],
 
 
@@ -171,11 +184,6 @@
     }
 
   ],
-
-
-
-
-
 
 
   "gene_chemical_general_definitions": [{

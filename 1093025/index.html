@@ -20,6 +20,18 @@ path.link {
   /*stroke: #333;*/
   stroke-width: 2px;
 }
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  height: 12px;
+  padding: 8px;
+  font: 20px sans-serif;
+  background: #ddd;
+  border: solid 4px #aaa;
+  border-radius: 8px;
+  pointer-events: none;
+}
 
 </style>
 <body>
@@ -42,11 +54,10 @@ var tree = d3.layout.tree()
 var diagonal = d3.svg.diagonal()
     .projection(function(d) { return [d.y, d.x]; });
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("body").append("svg:svg")
     .attr("width", width + margin.left + margin.right)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
 
 root = {
   "id": "1-1-1-1-1-1",
@@ -137,19 +148,10 @@ function update(source) {
       .attr("class", "node")
       .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
       .style("opacity", 1e-6)
-      .on("mouseover", function(d) {
       var g = d3.select(this); // The node
-      // The class is used to remove the additional text later
-      var my_hover = g.append('text')
-         .classed('my_hover', true)
-         .attr('x', 25)
-         .attr('y', 20)
-         .text(d.desc);
-      })
-      .on("mouseout", function() {
-          //mouseout = remove the text you displayed
-          d3.select(this).select('text.my_hover').remove();
-      });
+      g.on("mouseover", mouseover)
+      .on("mousemove", mousemove)
+      .on("mouseout", mouseout);
 
   // Enter any new nodes at the parent's previous position.
   nodeEnter.append("rect")
@@ -221,7 +223,6 @@ function update(source) {
   });
 }
 
-
 update(root);
 
 // Toggle children on click.
@@ -254,7 +255,6 @@ function indent_of(d) {
 }
 };
 
-
 function color(d) {
   var my_string = d.id;
   console.log(my_string.length);
@@ -269,5 +269,27 @@ function color(d) {
   }
 };
 
+var div = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 1e-6);
+
+function mouseover() {
+  div.transition()
+      .duration(400)
+      .style("opacity", 1);
+}
+
+function mousemove() {
+  div
+      .text(d3.event.pageX + ", " + d3.event.pageY)
+      .style("left", (d3.event.pageX + 10) + "px")
+      .style("top", (d3.event.pageY - 12) + "px");
+}
+
+function mouseout() {
+  div.transition()
+      .duration(400)
+      .style("opacity", 1e-6);
+}
 
 </script>
