@@ -24,7 +24,7 @@ div.tooltip {
   position: absolute;
   text-align: left;
   width: 500px;
-  height: 120px;
+  /*height: 120px;*/
   padding: 20px;
   font: 20px sans-serif;
   background: #ddd;
@@ -67,57 +67,71 @@ root = {
     "id": "1",
     "text": "(gene) relates to the disease",
     "desc": "The gene is related to the disease in some manner.",
+    "example": "",
     "children": [{
       "id": "1-1",
       "text": "altered expression is associated with",
       "desc": "Gene expression is the process by which information from a gene is used in the synthesis of a functional gene product. When gene expression is altered, gene expression is either increased or decreased.",
+      "example": "Several studies revealed significantly higher EPHB4 expression in malignancies such as prostate cancer and colorectal cancer.",
       "children": [
         {
           "id": "1-1-1",
           "text": "decreased expression leads to",
-          "desc": "Less gene product (mRNA, protein, or microRNAs) is produced than normal."
+          "desc": "Less gene product (mRNA, protein, or microRNAs) is produced than normal.",
+          "example": "",
         }, {
           "id": "1-1-2",
           "text": "increased expression leads to",
-          "desc": "More gene product (mRNA, protein, or microRNAs) is produced than normal."
+          "desc": "More gene product (mRNA, protein, or microRNAs) is produced than normal.",
+          "example": "Several studies revealed significantly higher EPHB4 expression in malignancies such as prostate cancer and colorectal cancer.",
         }]
       }, {
         "id": "1-2",
         "text": "altered regulation is associated with",
-        "desc": "Gene regulation is the process of turning genes on or off."
+        "desc": "Gene regulation is the process of turning genes on or off.",
+        "example": "TODO",
       }, {
       "id": "1-3",
       "text": "mutation is associated with",
       "desc": "Gene mutations or aberrations are permanent changes in the gene DNA sequence, differing from the sequence found in most people. Mutations range in size; they can affect anywhere from a single DNA base pair to a large piece of a chromosome that includes multiple genes.",
+      "example": "Mutations in the COL5A or COL3A genes are only a few of the genetic causes of EDS.",
       "children": [{
           "id": "1-3-1",
           "text": "deletion mutation is associated with",
           "desc": "A mutation in which a part of a chromosome or a sequence of DNA is lost is considered a deletion mutation. Deletion mutations are sometimes known as deficiencies, gene deletions, or simply 'deletions.'",
+          "example": "160 kb deletion in the gene ISPD unmasked a recessive mutation in a patient with Walker-Warburg syndrome.",
         }, {
           "id": "1-3-2",
           "text": "duplication mutation is associated with",
           "desc": "A duplication mutation is when any region of DNA is generated/duplicated or abnormally copied during molecular evolution from within a gene region.",
+          "example": "Malignant proliferation in 70 % of retinoblastoma tumours is loss of heterozygosity for chromosome 13q14, whereby the normal retinoblastoma gene (RB1) suffers a mutational event -- deletion , duplication or point mutation",
         }, {
           "id": "1-3-3",
           "text": "insertion mutation is associated with",
-          "desc": "An insertion mutation changes the number of DNA bases in a gene by adding a piece of DNA."
+          "desc": "An insertion mutation changes the number of DNA bases in a gene by adding a piece of DNA.",
+          "example": "Mutations were found in seven patients with a confirmed phosphomannose isomerase deficiency, analyzed in the context of this study: six missense mutations, a splice mutation and one insertion",
         }, {
           "id": "1-3-4",
           "text": "inversion mutation is associated with",
           "desc": "When a chromosome segment is 'clipped' out, turned upside down, and reinserted back into the chromosome, it is considered an inversion mutation.",
+          "example": "",
         }, {
           "id": "1-3-5",
           "text": "substitution mutation is associated with",
-          "desc": "When one base pair is replaced by a different base pair it is considered a substitution mutation."
+          "desc": "When one base pair is replaced by a different base pair it is considered a substitution mutation. Also called a point mutation.",
+          "example": "An intronic substitution was identified, leading to exon skipping and severely reduced expression of the COG5 protein. This defect was associated with a mild psychomotor retardation.",
         }
       ]}, {
         "id": "1-4",
         "text": "and post-translational modifications are associated with",
-        "desc": "Translation is protein synthesis. When changes are made to a protein during or after translation, it is considered a post-translational modification."
+        "desc": "Translation is protein synthesis. When changes are made to a protein during or after translation, it is considered a post-translational modification.",
+        "example": "A small interfering RNA causes knockdown of ATP2C1 expression, resulting in defects in both post-translational processing of wild-type thyroglobulin",
     }]}, {
     "id": "2",
     "text": "has no relation to",
-    "desc": "The gene does not relate to the disease." }]
+    "desc": "The gene does not relate to the disease.",
+    "example": "",
+  }]
 }
 
 
@@ -172,15 +186,16 @@ function update(source) {
         }
     )
       .on("mousemove", function(d) {
+        var def = "<h3>Description:</h3> <br />";
+        var example = "\n\n\n Example: \n\n";
         div
             .style("left", (d3.event.pageX + 10) + "px")
             .style("top", (d3.event.pageY - 12) + "px")
-            .text(d.desc);
+            .html(def + d.desc + example + d.example);
       })
       .on("mouseout", function() {
       div.attr("class", "tooltip")
           .transition()
-          .delay(400)
           .duration(500)
           .style("opacity", 1e-6);
         }

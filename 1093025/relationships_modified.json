@@ -3,100 +3,120 @@
     "id": "1",
     "text": "(chemical) relates to disease",
     "desc": "The chemical has some type of relation to the disease.",
+    "example": "",
     "children": [{
         "id": "1-2",
         "text": "exacerbates",
-        "desc": "The chemical worsens or exacerbates the disease in any manner."
+        "desc": "The chemical worsens or exacerbates the disease in any manner.",
+        "example": "",
       }, {
         "id": "1-1",
         "text": "treats",
         "desc": "The chemical improves or treats the disease in any manner.",
+        "example": "",
         "children": [{
           "id": "1-1-1",
           "text": "treats the symptoms of",
-          "desc": "Symptoms are defined as subjective physical or mental manifestations of a disease; examples include stomachache, lower-back pain, and fatigue. Signs are defined as objective manifestations of a disease; examples include high white blood cell count or bloody stool."
+          "desc": "Symptoms are defined as subjective physical or mental manifestations of a disease; examples include stomachache, lower-back pain, and fatigue. Signs are defined as objective manifestations of a disease; examples include high white blood cell count or bloody stool.",
+          "example": "",
           }, {
           "id": "1-1-2",
           "text": "treats the cause of",
-          "desc": "Causes of disease include infectious, non-communicable/non-transferable, or lifestyle causes."
+          "desc": "Causes of disease include infectious, non-communicable/non-transferable, or lifestyle causes.",
+          "example": "Artificial tears improve dry and itchy eyes in alacrima patients."
         }]
-
       }, {
         "id": "1-3",
         "text": "increases risk of disease",
-        "desc": "Administration of the drug increases chances of getting the disease. Considered an 'adverse side effect' of the drug."
+        "desc": "Administration of the drug increases chances of getting the disease. Considered an 'adverse side effect' of the drug.",
+        "example": "",
       }, {
         "id": "1-4",
         "text": "may cause",
-        "desc": "administration of the chemical may cause or lead to the disease."
+        "desc": "administration of the chemical may cause or lead to the disease.",
+        "example": "43% of mice given the chemical NVP-BHG712 developed pulmonary metastases.",
       }, {
         "id": "1-5",
         "text": "prevents",
-        "desc": "Administration of the chemical prevents the disease"
+        "desc": "Administration of the chemical prevents the disease",
+        "example": "Here, we demonstrate for the first time that treatment with gingerol prevents prion peptide-mediated neuronal cell death. This study suggests that treatment with gingerol may provide a novel therapeutic strategy for prion-mediated neurotoxicity",
       }]
     }, {
     "id": "2",
     "text": "has no relation to",
-    "desc": "There is no relationship between the chemical and disease."
+    "desc": "There is no relationship between the chemical and disease.",
+    "example": "To study soft tissue sarcoma, an experimental group of mice was given the chemical NVP-BHG712.",
   }],
 
   "gene_disease_relation_menu": [{
     "id": "1",
     "text": "(gene) relates to the disease",
     "desc": "The gene is related to the disease in some manner.",
+    "example": "",
     "children": [{
       "id": "1-1",
       "text": "altered expression is associated with",
       "desc": "Gene expression is the process by which information from a gene is used in the synthesis of a functional gene product. When gene expression is altered, gene expression is either increased or decreased.",
+      "example": "Several studies revealed significantly higher EPHB4 expression in malignancies such as prostate cancer and colorectal cancer.",
       "children": [
         {
           "id": "1-1-1",
           "text": "decreased expression leads to",
-          "desc": "Less gene product (mRNA, protein, or microRNAs) is produced than normal."
+          "desc": "Less gene product (mRNA, protein, or microRNAs) is produced than normal.",
+          "example": "",
         }, {
           "id": "1-1-2",
           "text": "increased expression leads to",
-          "desc": "More gene product (mRNA, protein, or microRNAs) is produced than normal."
+          "desc": "More gene product (mRNA, protein, or microRNAs) is produced than normal.",
+          "example": "Several studies revealed significantly higher EPHB4 expression in malignancies such as prostate cancer and colorectal cancer.",
         }]
       }, {
         "id": "1-2",
         "text": "altered regulation is associated with",
-        "desc": "Gene regulation is the process of turning genes on or off."
+        "desc": "Gene regulation is the process of turning genes on or off.",
+        "example": "TODO",
       }, {
       "id": "1-3",
       "text": "mutation is associated with",
       "desc": "Gene mutations or aberrations are permanent changes in the gene DNA sequence, differing from the sequence found in most people. Mutations range in size; they can affect anywhere from a single DNA base pair to a large piece of a chromosome that includes multiple genes.",
+      "example": "Mutations in the COL5A or COL3A genes are only a few of the genetic causes of EDS.",
       "children": [{
           "id": "1-3-1",
           "text": "deletion mutation is associated with",
           "desc": "A mutation in which a part of a chromosome or a sequence of DNA is lost is considered a deletion mutation. Deletion mutations are sometimes known as deficiencies, gene deletions, or simply 'deletions.'",
+          "example": "160 kb deletion in the gene ISPD unmasked a recessive mutation in a patient with Walker-Warburg syndrome.",
         }, {
           "id": "1-3-2",
           "text": "duplication mutation is associated with",
           "desc": "A duplication mutation is when any region of DNA is generated/duplicated or abnormally copied during molecular evolution from within a gene region.",
+          "example": "Malignant proliferation in 70 % of retinoblastoma tumours is loss of heterozygosity for chromosome 13q14, whereby the normal retinoblastoma gene (RB1) suffers a mutational event -- deletion , duplication or point mutation",
         }, {
           "id": "1-3-3",
           "text": "insertion mutation is associated with",
-          "desc": "An insertion mutation changes the number of DNA bases in a gene by adding a piece of DNA."
+          "desc": "An insertion mutation changes the number of DNA bases in a gene by adding a piece of DNA.",
+          "example": "Mutations were found in seven patients with a confirmed phosphomannose isomerase deficiency, analyzed in the context of this study: six missense mutations, a splice mutation and one insertion",
         }, {
           "id": "1-3-4",
           "text": "inversion mutation is associated with",
           "desc": "When a chromosome segment is 'clipped' out, turned upside down, and reinserted back into the chromosome, it is considered an inversion mutation.",
+          "example": "",
         }, {
           "id": "1-3-5",
           "text": "substitution mutation is associated with",
-          "desc": "When one base pair is replaced by a different base pair it is considered a substitution mutation."
+          "desc": "When one base pair is replaced by a different base pair it is considered a substitution mutation. Also called a point mutation.",
+          "example": "An intronic substitution was identified, leading to exon skipping and severely reduced expression of the COG5 protein. This defect was associated with a mild psychomotor retardation.",
         }
       ]}, {
         "id": "1-4",
         "text": "and post-translational modifications are associated with",
-        "desc": "Translation is protein synthesis. When changes are made to a protein during or after translation, it is considered a post-translational modification."
+        "desc": "Translation is protein synthesis. When changes are made to a protein during or after translation, it is considered a post-translational modification.",
+        "example": "A small interfering RNA causes knockdown of ATP2C1 expression, resulting in defects in both post-translational processing of wild-type thyroglobulin",
     }]}, {
     "id": "2",
     "text": "has no relation to",
-    "desc": "The gene does not relate to the disease."
+    "desc": "The gene does not relate to the disease.",
+    "example": "",
   }],
-
 
   "gene_chemical_relation_menu": [{
     "id": "1",
