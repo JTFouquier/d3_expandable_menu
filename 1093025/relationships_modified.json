@@ -24,15 +24,15 @@
       }, {
         "id": "1-3",
         "text": "increases risk of disease",
-        "desc": "Administration of the drug increases chances of getting the disease. Also considered 'adverse effects'."
+        "desc": "Administration of the drug increases chances of getting the disease. Considered an 'adverse side effect' of the drug."
       }, {
         "id": "1-4",
         "text": "may cause",
-        "desc": ""
+        "desc": "administration of the chemical may cause or lead to the disease."
       }, {
         "id": "1-5",
         "text": "prevents",
-        "desc": ""
+        "desc": "Administration of the chemical prevents the disease"
       }]
     }, {
     "id": "2",
@@ -43,25 +43,25 @@
   "gene_disease_relation_menu": [{
     "id": "1",
     "text": "(gene) relates to the disease",
-    "desc": "the gene is related to the disease in some manner.",
+    "desc": "The gene is related to the disease in some manner.",
     "children": [{
       "id": "1-1",
       "text": "altered expression is associated with",
-      "desc": "gene expression is the process by which information from a gene is used in the synthesis of a functional gene product. When gene expression is altered, gene expression is either increased or decreased.",
+      "desc": "Gene expression is the process by which information from a gene is used in the synthesis of a functional gene product. When gene expression is altered, gene expression is either increased or decreased.",
       "children": [
         {
           "id": "1-1-1",
           "text": "decreased expression leads to",
-          "desc": "less gene product (mRNA, protein, or microRNAs) is produced than normal."
+          "desc": "Less gene product (mRNA, protein, or microRNAs) is produced than normal."
         }, {
           "id": "1-1-2",
           "text": "increased expression leads to",
-          "desc": "more gene product (mRNA, protein, or microRNAs) is produced than normal."
+          "desc": "More gene product (mRNA, protein, or microRNAs) is produced than normal."
         }]
       }, {
         "id": "1-2",
         "text": "altered regulation is associated with",
-        "desc": "gene regulation is the process of turning genes on or off."
+        "desc": "Gene regulation is the process of turning genes on or off."
       }, {
       "id": "1-3",
       "text": "mutation is associated with",
@@ -136,15 +136,15 @@
   "chemical_disease_general_definitions": [{
     "id": "1",
     "text": "chemicals",
-    "desc": "a substance with a distinct molecular composition, including, but not limited to, brand name, generic or illegal drugs, chemical elements (Eg-oxygen), molecules."
+    "desc": "A substance with a distinct molecular composition, including, but not limited to, brand name, generic or illegal drugs, chemical elements (Eg-oxygen), molecules."
     }, {
     "id": "2",
     "text": "signs of disease",
-    "desc": "signs are defined as objective manifestations of a disease; examples include high white blood cell count or blood in the stool."
+    "desc": "Signs are defined as objective manifestations of a disease; examples include high white blood cell count or blood in the stool."
     }, {
     "id": "3",
     "text": "symptoms of disease",
-    "desc": "symptoms are defined as subjective physical or mental manifestations of a disease; examples include stomachache, back pain, headache, and fatigue."
+    "desc": "Symptoms are defined as subjective physical or mental manifestations of a disease; examples include stomachache, back pain, headache, and fatigue."
     }
 
   ],
@@ -156,15 +156,15 @@
     }, {
     "id": "2",
     "text": "gene products",
-    "desc": "usually a protein, mRNA or microRNA that is encoded by the gene and will sometimes have the same name/symbol as the gene."
+    "desc": "Usually a protein, mRNA or microRNA that is encoded by the gene and will sometimes have the same name/symbol as the gene."
     }, {
     "id": "3",
     "text": "disease",
-    "desc": "a particular abnormal, pathological condition that affects part or all of an organism."
+    "desc": "A particular abnormal, pathological condition that affects part or all of an organism."
     }, {
     "id": "4",
     "text": "disease class",
-    "desc": "a specific category of similar but different diseases."
+    "desc": "A specific category of similar but different diseases."
     },{
     "id": "1",
     "text": "xxx",

@@ -22,10 +22,10 @@ path.link {
 }
 div.tooltip {
   position: absolute;
-  text-align: center;
-  width: 200px;
-  height: 12px;
-  padding: 8px;
+  text-align: left;
+  width: 500px;
+  height: 120px;
+  padding: 20px;
   font: 20px sans-serif;
   background: #ddd;
   border: solid 4px #aaa;
@@ -62,28 +62,29 @@ var svg = d3.select("body").append("svg:svg")
 root = {
   "id": "1-1-1-1-1-1",
   "text": "gene + disease relationship",
-  "desc": "",
+  "desc": "Gene + disease relationship definitions",
   "children": [{
     "id": "1",
     "text": "(gene) relates to the disease",
+    "desc": "The gene is related to the disease in some manner.",
     "children": [{
       "id": "1-1",
       "text": "altered expression is associated with",
-      "desc": "gene expression is the process by which information from a gene is used in the synthesis of a functional gene product. When gene expression is altered, gene expression is either increased or decreased.",
+      "desc": "Gene expression is the process by which information from a gene is used in the synthesis of a functional gene product. When gene expression is altered, gene expression is either increased or decreased.",
       "children": [
         {
           "id": "1-1-1",
           "text": "decreased expression leads to",
-          "desc": "less gene product (mRNA, protein, or microRNAs) is produced than normal."
+          "desc": "Less gene product (mRNA, protein, or microRNAs) is produced than normal."
         }, {
           "id": "1-1-2",
           "text": "increased expression leads to",
-          "desc": "more gene product (mRNA, protein, or microRNAs) is produced than normal."
+          "desc": "More gene product (mRNA, protein, or microRNAs) is produced than normal."
         }]
       }, {
         "id": "1-2",
         "text": "altered regulation is associated with",
-        "desc": "gene regulation is the process of turning genes on or off."
+        "desc": "Gene regulation is the process of turning genes on or off."
       }, {
       "id": "1-3",
       "text": "mutation is associated with",
@@ -116,8 +117,7 @@ root = {
     }]}, {
     "id": "2",
     "text": "has no relation to",
-    "desc": "The gene does not relate to the disease."
-  }]
+    "desc": "The gene does not relate to the disease." }]
 }
 
 
@@ -152,7 +152,12 @@ function update(source) {
       .style("opacity", 1e-6);
 
 
-  // Enter any new nodes at the parent's previous position.
+
+  // COPIED from http://bl.ocks.org/mbostock/1087001
+  var div = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 1e-6);
+
   nodeEnter.append("rect")
       .attr("y", -barHeight / 2)
       .attr("x", indent_of)
@@ -160,15 +165,34 @@ function update(source) {
       .attr("width", barWidth)
       .style("fill", color)
       .on("click", click)
-      .text(function(d) { return d.text; })   // I want this to display TODO :(
-      .on("mouseover", mouseover)
-      .on("mousemove", mousemove)
-      .on("mouseout", mouseout);
+      .on("mouseover", function() {
+      div.attr("class", "tooltip").transition()
+          .duration(0)
+          .style("opacity", 1);
+        }
+    )
+      .on("mousemove", function(d) {
+        div
+            .style("left", (d3.event.pageX + 10) + "px")
+            .style("top", (d3.event.pageY - 12) + "px")
+            .text(d.desc);
+      })
+      .on("mouseout", function() {
+      div.attr("class", "tooltip")
+          .transition()
+          .delay(400)
+          .duration(500)
+          .style("opacity", 1e-6);
+        }
+    );
 
   nodeEnter.append("text")
       .attr("dy", -3)
       .attr("dx", indent_of )
-      .text(function(d) { return d.text; });
+      .text(function(d) {
+        var my_text = "   " + d.text;
+        return my_text;
+      });
 
   // Transition nodes to their new position.
   nodeEnter.transition()
@@ -242,7 +266,6 @@ function click(d) {
 
 function indent_of(d) {
   var my_string = d.id;
-  console.log(my_string);
   if (my_string.length === 1) {
     indent = 100;
   } else if (my_string.length === 3) {
@@ -257,7 +280,6 @@ return indent;
 
 function color(d) {
   var my_string = d.id;
-  console.log(my_string.length);
   if (my_string.length === 1) {
     return "#d95f02";
   } else if (my_string.length === 3) {
@@ -270,28 +292,6 @@ function color(d) {
 };
 
 
-// COPIED from
-var div = d3.select("body").append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 1e-6);
 
-function mouseover() {
-  div.transition()
-      .duration(400)
-      .style("opacity", 1);
-}
-
-function mousemove() {
-  div
-      .text("not working")
-      .style("left", (d3.event.pageX + 10) + "px")
-      .style("top", (d3.event.pageY - 12) + "px");
-}
-
-function mouseout() {
-  div.transition()
-      .duration(400)
-      .style("opacity", 1e-6);
-}
 
 </script>
