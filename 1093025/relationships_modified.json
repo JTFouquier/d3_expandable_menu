@@ -52,18 +52,18 @@
     "id": "1",
     "text": "(gene) relates to the disease",
     "desc": "The gene is related to the disease in some manner.",
-    "example": "",
+    "example": "N/A.",
     "children": [{
       "id": "1-1",
       "text": "altered expression is associated with",
-      "desc": "Gene expression is the process by which information from a gene is used in the synthesis of a functional gene product. When gene expression is altered, gene expression is either increased or decreased.",
+      "desc": "Gene expression is the process by which information from a gene is used in the synthesis of a functional gene product (mRNA, protein, or microRNAs). When gene expression is altered, gene expression is either increased or decreased.",
       "example": "Several studies revealed significantly higher EPHB4 expression in malignancies such as prostate cancer and colorectal cancer.",
       "children": [
         {
           "id": "1-1-1",
           "text": "decreased expression leads to",
           "desc": "Less gene product (mRNA, protein, or microRNAs) is produced than normal.",
-          "example": "",
+          "example": "We observed decreased expression of transcription factor EB (TFEB), a master regulator of the autophagy-lysosome pathway, in Huntington disease cells and mice.",
         }, {
           "id": "1-1-2",
           "text": "increased expression leads to",
@@ -74,12 +74,12 @@
         "id": "1-2",
         "text": "altered regulation is associated with",
         "desc": "Gene regulation is the process of turning genes on or off.",
-        "example": "TODO",
+        "example": "Protein misfolding, characterize many aging-related diseases. Acute sleep deprivation (6 h) in young mice leads to induction of the unfolded protein response with upregulation of proteins BiP/GRP78.",
       }, {
       "id": "1-3",
       "text": "mutation is associated with",
       "desc": "Gene mutations or aberrations are permanent changes in the gene DNA sequence, differing from the sequence found in most people. Mutations range in size; they can affect anywhere from a single DNA base pair to a large piece of a chromosome that includes multiple genes.",
-      "example": "Mutations in the COL5A or COL3A genes are only a few of the genetic causes of EDS.",
+      "example": "Mutations in the COL5A or COL3A genes are only a few of the genetic causes of Ehlers-Danlos syndrome.",
       "children": [{
           "id": "1-3-1",
           "text": "deletion mutation is associated with",
@@ -99,7 +99,7 @@
           "id": "1-3-4",
           "text": "inversion mutation is associated with",
           "desc": "When a chromosome segment is 'clipped' out, turned upside down, and reinserted back into the chromosome, it is considered an inversion mutation.",
-          "example": "",
+          "example": "We report on a family in which first cousins are affected by Angelman syndrome and Prader-Willi syndrome as a result of a familial paracentric inversion of 15q11-q13 ",
         }, {
           "id": "1-3-5",
           "text": "substitution mutation is associated with",
@@ -115,7 +115,7 @@
     "id": "2",
     "text": "has no relation to",
     "desc": "The gene does not relate to the disease.",
-    "example": "",
+    "example": "TODO: discuss this",
   }],
 
   "gene_chemical_relation_menu": [{
