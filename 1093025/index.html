@@ -32,17 +32,36 @@ div.tooltip {
   border-radius: 8px;
   pointer-events: none;
 }
+p.paragraph span.user_annotated_green,
+span.user_annotated_green {
+  background-color: #B1FFA8;
+}
 
 </style>
 <body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
+
+// var test_width = 0;
+//
+// $(document).ready(function(){
+//   test_width = $(document).width();
+//     $(window).resize(function(){
+//         console.log("hello");
+//         console.log($(document).width());
+//         console.log($(window).width());
+//         test_width = $(document).width();
+//         update(root);
+//     return test_width;
+//     });
+// });
 
 var margin = {top: 50, right: 20, bottom: 20, left: 20},
     width = 1400 - margin.left - margin.right,
     barHeight = 60,
-    barWidth = width * .4;
+    barWidth = width * .45;
 
 var i = 0,
     duration = 550,
@@ -59,8 +78,6 @@ var svg = d3.select("body").append("svg:svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-
-
 root = {
   "id": "1-1-1-1-1-1",
   "text": "gene + disease relationship",
@@ -75,39 +92,39 @@ root = {
       "id": "1-1",
       "text": "altered expression is associated with",
       "desc": "Gene expression is the process by which information from a gene is used in the synthesis of a functional gene product (mRNA, protein, or microRNAs). When gene expression is altered, gene expression is either increased or decreased.",
-      "example": "Several studies revealed significantly higher EPHB4 expression in malignancies such as prostate cancer and colorectal cancer.",
+      "example": "Several studies revealed significantly higher <b>EPHB4</b> expression in malignancies such as <b>prostate cancer</b> and colorectal cancer.",
       "children": [
         {
           "id": "1-1-1",
           "text": "decreased expression leads to",
           "desc": "Less gene product (mRNA, protein, or microRNAs) is produced than normal.",
-          "example": "We observed decreased expression of transcription factor EB (TFEB), a master regulator of the autophagy-lysosome pathway, in Huntington disease cells and mice.",
+          "example": "We observed decreased expression of <b>transcription factor EB (TFEB)</b>, a master regulator of the autophagy-lysosome pathway, in <b>Huntington disease</b> cells and mice.",
         }, {
           "id": "1-1-2",
           "text": "increased expression leads to",
           "desc": "More gene product (mRNA, protein, or microRNAs) is produced than normal.",
-          "example": "Several studies revealed significantly higher EPHB4 expression in malignancies such as prostate cancer and colorectal cancer.",
+          "example": "Several studies revealed significantly higher <b>EPHB4</b> expression in malignancies such as <b>prostate cancer</b> and colorectal cancer.",
         }]
       }, {
         "id": "1-2",
         "text": "altered regulation is associated with",
         "desc": "Gene regulation is the process of turning genes on or off.",
-        "example": "Protein misfolding, characterize many aging-related diseases. Acute sleep deprivation (6 h) in young mice leads to induction of the unfolded protein response with upregulation of proteins BiP/GRP78.",
+        "example": "Protein misfolding characterizes many aging-related diseases. Acute sleep deprivation (6 h) in young mice leads to induction of the unfolded protein response with upregulation of proteins BiP/GRP78 </span class='user_annotated_green'> gene or <span class='user_annotated_green'>CAV1</span class='user_annotated_green'>.",
       }, {
       "id": "1-3",
       "text": "mutation is associated with",
       "desc": "Gene mutations or aberrations are permanent changes in the gene DNA sequence, differing from the sequence found in most people. Mutations range in size; they can affect anywhere from a single DNA base pair to a large piece of a chromosome that includes multiple genes.",
-      "example": "Mutations in the COL5A or COL3A genes are only a few of the genetic causes of Ehlers-Danlos syndrome.",
+      "example": "Mutations in the <b>COL5A</b> or COL3A genes are only a few of the genetic causes of <b>Ehlers-Danlos syndrome</b>.",
       "children": [{
           "id": "1-3-1",
           "text": "deletion mutation is associated with",
           "desc": "A mutation in which a part of a chromosome or a sequence of DNA is lost is considered a deletion mutation. Deletion mutations are sometimes known as deficiencies, gene deletions, or simply 'deletions.'",
-          "example": "160 kb deletion in the gene ISPD unmasked a recessive mutation in a patient with Walker-Warburg syndrome.",
+          "example": "160 kb deletion in the gene <b>ISPD</b> unmasked a recessive mutation in a patient with <b>Walker-Warburg syndrome</b>.",
         }, {
           "id": "1-3-2",
           "text": "duplication mutation is associated with",
           "desc": "A duplication mutation is when any region of DNA is generated/duplicated or abnormally copied during molecular evolution from within a gene region.",
-          "example": "Malignant proliferation in 70 % of retinoblastoma tumours is loss of heterozygosity for chromosome 13q14, whereby the normal retinoblastoma gene (RB1) suffers a mutational event -- deletion , duplication or point mutation",
+          "example": "Malignant proliferation in 70 % of <b>retinoblastoma</b> tumours is loss of heterozygosity for chromosome 13q14, whereby the normal <b>retinoblastoma gene (RB1)</b> suffers a mutational event -- deletion , duplication or point mutation",
         }, {
           "id": "1-3-3",
           "text": "insertion mutation is associated with",
@@ -181,7 +198,7 @@ function update(source) {
       .attr("height", barHeight)
       .attr("width", barWidth)
       .style("fill", color)
-      .on("click", click)
+      // .on("click", click)
       .on("mouseover", function() {
       div.attr("class", "tooltip").transition()
           .duration(0)
@@ -204,7 +221,7 @@ function update(source) {
 
   nodeEnter.append("text")
       .attr("dy", -3)
-      .attr("dx", function(obj) { console.log(obj); return indent_of(obj)+20; })
+      .attr("dx", function(obj) { return indent_of(obj)+20; })
       .text(function(d) {
         var my_text = "   " + d.text;
         return my_text;
@@ -266,15 +283,11 @@ function update(source) {
   });
 }
 
+
+
 update(root);
 
-// 
-// function updateWindow(){
-//     x = window.innerWidth || d.documentElement.clientWidth || d.getElementByTagName('body').clientWidth;
-//     console.log(x);
-//     svg.attr("width", x);
-// }
-// window.onresize = updateWindow;
+
 
 // Toggle children on click.
 function click(d) {
@@ -293,9 +306,9 @@ function indent_of(d) {
   if (my_string.length === 1) {
     indent = 100;
   } else if (my_string.length === 3) {
-    indent = 200;
+    indent = 150;
   } else if (my_string.length === 5) {
-    indent = 300;
+    indent = 200;
   } else {
     indent = 0;
 }

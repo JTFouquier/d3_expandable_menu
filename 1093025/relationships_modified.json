@@ -29,7 +29,7 @@
         "id": "1-3",
         "text": "increases risk of disease",
         "desc": "Administration of the drug increases chances of getting the disease. Considered an 'adverse side effect' of the drug.",
-        "example": "",
+        "example": "Parkinson's disease risk factors include ageing, exposure to toxins and genetic defects.",
       }, {
         "id": "1-4",
         "text": "may cause",
@@ -61,20 +61,15 @@
       "children": [
         {
           "id": "1-1-1",
-          "text": "decreased expression leads to",
+          "text": "decreased expression is associated with",
           "desc": "Less gene product (mRNA, protein, or microRNAs) is produced than normal.",
           "example": "We observed decreased expression of transcription factor EB (TFEB), a master regulator of the autophagy-lysosome pathway, in Huntington disease cells and mice.",
         }, {
           "id": "1-1-2",
-          "text": "increased expression leads to",
+          "text": "increased expression is associated with",
           "desc": "More gene product (mRNA, protein, or microRNAs) is produced than normal.",
           "example": "Several studies revealed significantly higher EPHB4 expression in malignancies such as prostate cancer and colorectal cancer.",
         }]
-      }, {
-        "id": "1-2",
-        "text": "altered regulation is associated with",
-        "desc": "Gene regulation is the process of turning genes on or off.",
-        "example": "Protein misfolding, characterize many aging-related diseases. Acute sleep deprivation (6 h) in young mice leads to induction of the unfolded protein response with upregulation of proteins BiP/GRP78.",
       }, {
       "id": "1-3",
       "text": "mutation is associated with",
@@ -89,7 +84,7 @@
           "id": "1-3-2",
           "text": "duplication mutation is associated with",
           "desc": "A duplication mutation is when any region of DNA is generated/duplicated or abnormally copied during molecular evolution from within a gene region.",
-          "example": "Malignant proliferation in 70 % of retinoblastoma tumours is loss of heterozygosity for chromosome 13q14, whereby the normal retinoblastoma gene (RB1) suffers a mutational event -- deletion , duplication or point mutation",
+          "example": "Malignant proliferation in 70% of retinoblastoma tumours is loss of heterozygosity for chromosome 13q14, whereby the normal retinoblastoma gene (RB1) suffers a mutational event -- deletion, duplication or point mutation",
         }, {
           "id": "1-3-3",
           "text": "insertion mutation is associated with",
@@ -115,7 +110,7 @@
     "id": "2",
     "text": "has no relation to",
     "desc": "The gene does not relate to the disease.",
-    "example": "TODO: discuss this",
+    "example": "TODO",
   }],
 
   "gene_chemical_relation_menu": [{
@@ -151,71 +146,8 @@
     "id": "2",
     "text": "has no relation to"
     }
-  ],
-
-  "chemical_disease_general_definitions": [{
-    "id": "1",
-    "text": "chemicals",
-    "desc": "A substance with a distinct molecular composition, including, but not limited to, brand name, generic or illegal drugs, chemical elements (Eg-oxygen), molecules."
-    }, {
-    "id": "2",
-    "text": "signs of disease",
-    "desc": "Signs are defined as objective manifestations of a disease; examples include high white blood cell count or blood in the stool."
-    }, {
-    "id": "3",
-    "text": "symptoms of disease",
-    "desc": "Symptoms are defined as subjective physical or mental manifestations of a disease; examples include stomachache, back pain, headache, and fatigue."
-    }
-
-  ],
-
-  "gene_disease_general_definitions": [{
-    "id": "1",
-    "text": "gene",
-    "desc": "A molecular unit of heredity in an organism, and is usually referred to in biomedical literature by their gene name, gene symbol, or both."
-    }, {
-    "id": "2",
-    "text": "gene products",
-    "desc": "Usually a protein, mRNA or microRNA that is encoded by the gene and will sometimes have the same name/symbol as the gene."
-    }, {
-    "id": "3",
-    "text": "disease",
-    "desc": "A particular abnormal, pathological condition that affects part or all of an organism."
-    }, {
-    "id": "4",
-    "text": "disease class",
-    "desc": "A specific category of similar but different diseases."
-    },{
-    "id": "1",
-    "text": "xxx",
-    "desc": "xxxxx"
-    }, {
-    "id": "2",
-    "text": "xxx",
-    "desc": "xxx"
-    },{
-    "id": "1",
-    "text": "xxx",
-    "desc": "xxxxx"
-    }, {
-    "id": "2",
-    "text": "xxx",
-    "desc": "xxx"
-    }
-
-  ],
-
-
-  "gene_chemical_general_definitions": [{
-    "id": "1",
-    "text": "xxx",
-    "desc": "xxxxx"
-    }, {
-    "id": "2",
-    "text": "xxx",
-    "desc": "xxx"
-    }
   ]
+
 
 
 }
