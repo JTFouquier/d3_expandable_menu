@@ -8,23 +8,12 @@
         "id": "1-2",
         "text": "Exacerbates",
         "desc": "The chemical worsens or exacerbates the disease in any manner.",
-        "example": "",
+        "example": "St. John's Wort has been known to worsen symptoms of Parkinson's disease.",
       }, {
         "id": "1-1",
         "text": "Treats",
         "desc": "The chemical improves or treats the disease in any manner.",
-        "example": "",
-        "children": [{
-          "id": "1-1-1",
-          "text": "Treats the symptoms of",
-          "desc": "Symptoms are defined as subjective physical or mental manifestations of a disease; examples include stomachache, lower-back pain, and fatigue. Signs are defined as objective manifestations of a disease; examples include high white blood cell count or bloody stool.",
-          "example": "",
-          }, {
-          "id": "1-1-2",
-          "text": "Treats the cause of",
-          "desc": "Causes of disease include infectious, non-communicable/non-transferable, or lifestyle causes.",
-          "example": "Artificial tears improve dry and itchy eyes in alacrima patients."
-        }]
+        "example": "This study suggests that treatment with gingerol may provide a novel therapeutic strategy for prion-mediated neurotoxicity",
       }, {
         "id": "1-3",
         "text": "Increases risk of disease",
@@ -37,9 +26,9 @@
         "example": "43% of mice given the chemical NVP-BHG712 developed pulmonary metastases.",
       }, {
         "id": "1-5",
-        "text": "prevents",
+        "text": "Prevents",
         "desc": "Administration of the chemical prevents the disease",
-        "example": "Here, we demonstrate for the first time that treatment with gingerol prevents prion peptide-mediated neuronal cell death. This study suggests that treatment with gingerol may provide a novel therapeutic strategy for prion-mediated neurotoxicity",
+        "example": "Malarone is taken daily by travelers wanting to prevent malaria.",
       }]
     }, {
     "id": "2",
@@ -109,7 +98,5 @@
     "text": "has no relation to"
     }
   ]
-
-
 
 }
